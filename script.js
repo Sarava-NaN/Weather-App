@@ -82,3 +82,16 @@ async function checkWeather() {
 $Btn.addEventListener("click", checkWeather);
 // "Clouds" "Mist" "Clear" "Smoke" "Haze" "Rain"
 checkWeather();
+
+let time = new Date().getHours();
+
+// time = time - 12;
+
+console.log(time);
+
+const Night = document.querySelector(".container");
+if (time > 20) {
+  Night.style.background = "black";
+} else {
+  Night.style.background = "linear-gradient(135deg, #00feba, #5b548a)";
+}
