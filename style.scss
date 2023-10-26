@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Martian+Mono:wght@600;700&family=Poppins&family=Roboto+Mono:wght@400;600&display=swap");
+/* font-family: 'Lilita One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Mono', monospace;
+
+// This comment won't be included in the CSS.
+// This is also commented out.
+
+/* But this comment will, except in compressed mode.
+
+ It can also contain interpolation:
+  1 + 1 = #{1 + 1} && #{"Man_"+"City"}
+
+ This comment will be included even in compressed mode.
+$primary1: #272727;
+$primary2: #747474;
+$primary3: #1a1a1d;
+$primary4: #950740;
+$secondary1: #ff652f;
+$secondary2: #ffe400;
+$secondary3: #14a76c;
+$secondary4: #c3073f;
+Variables  */
+
+$primary1: #272727;
+$primary2: #747474;
+$primary3: #1a1a1d;
+$primary4: #950740;
+$secondary1: #ff652f;
+$secondary2: #ffe400;
+$secondary3: #14a76c;
+$secondary4: #c3073f;
+
+/*Reset to Default Styles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $primary1;
+  overflow: hidden;
+}
+header {
+  font-family: "Lilita One", cursive;
+  display: flex;
+  justify-content: space-between;
+  height: 12vh;
+  background: $secondary2;
+
+  .logo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    width: 80%;
+    a {
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      font-size: 2.2rem;
+      //   margin-top: 1rem;
+      padding: 20px;
+      color: $secondary4;
+
+      &:nth-child(1) {
+        margin-left: 3rem;
+      }
+      &:nth-child(2) {
+        margin-right: 3rem;
+      }
+    }
+    #indicator {
+      z-index: 1;
+      position: absolute;
+      width: 240px;
+      height: 59px;
+      background: $primary1;
+      margin-top: 1rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      transition: 0.8s ease;
+      display: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        bottom: 0;
+        left: -30px;
+        box-shadow: 15px 15px 0px 5px $primary1;
+        border-bottom-right-radius: 20px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        bottom: 0;
+        right: -30px;
+        background: transparent;
+        border-bottom-left-radius: 20px;
+        box-shadow: -15px 15px 0px 5px $primary1;
+      }
+    }
+  }
+}
+.container {
+  font-family: "Lilita One", cursive;
+  //   background: linear-gradient(180deg, #00feba 0%, #5b548a 100%);
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  width: 90%;
+  max-width: 470px;
+  margin: 50px auto 0;
+  padding: 40px 35px;
+  //   height: 70vh;
+  border-radius: 10px;
+
+  .top_bar {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+
+    input {
+      font-family: "Lilita One", cursive;
+      width: 300px;
+      padding: 8px 20px;
+      border: none;
+      outline: none;
+      background-color: $primary1;
+      text-transform: capitalize;
+      color: $secondary1;
+      border-radius: 10px;
+      font-size: 1.8rem;
+
+      &:focus {
+        border: 2px groove #00feba;
+      }
+
+      &::placeholder {
+        color: #747474cc;
+      }
+    }
+    .search_btn {
+      z-index: 1;
+      background-color: $primary1;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      padding: 25px;
+      display: flex;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      transition: 2s;
+      &:hover {
+        background-color: #fff;
+      }
+      .fa-sharp {
+        z-index: 2;
+        color: $primary2;
+        font-weight: 800;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  //   Error
+  .error {
+    color: #c3073f;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 6rem;
+    display: none;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      font-family: "Poppins";
+      font-weight: 900;
+      text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+  }
+  //
+  .weather-App {
+    // display: none;
+    .weather_icon {
+      display: flex;
+      justify-content: center;
+      margin-top: -1rem;
+    }
+    .weather--data {
+      margin-top: -30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .temp {
+        color: wheat;
+        font-size: 3rem;
+        text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.8);
+      }
+      .location {
+        text-transform: capitalize;
+        color: wheat;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.8);
+      }
+      .footer {
+        display: flex;
+        color: wheat;
+        justify-content: space-around;
+        .humidity {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          img {
+            width: 40px;
+          }
+          .words {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: -10px;
+          }
+        }
+        .wind {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+
+          img {
+            width: 40px;
+          }
+
+          .words {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
+  .container {
+    margin-top: 1.5rem;
+    .top_bar {
+      display: flex;
+      justify-content: space-between;
+      input {
+        max-width: 220px;
+        margin: auto;
+      }
+      .search_btn {
+        margin-left: -1rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 30px;
+      }
+    }
+    //
+    .weather_icon {
+      display: flex;
+      justify-content: center;
+      margin-top: -1rem;
+    }
+    .weather--data {
+      margin-top: -20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .temp {
+        color: $secondary2;
+        font-size: 3rem;
+      }
+      .location {
+        text-transform: capitalize;
+        color: $secondary4;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .footer {
+        display: flex;
+        color: wheat;
+        justify-content: space-around;
+        gap: 38px;
+        margin-top: 1rem;
+
+        .humidity {
+          display: flex;
+          align-items: flex-start;
+          gap: 18px;
+          img {
+            width: 40px;
+          }
+          .words {
+            display: flex;
+            color: $primary3;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: -10px;
+          }
+        }
+        .wind {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+
+          img {
+            width: 40px;
+          }
+
+          .words {
+            color: $primary3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
+            margin-top: -22px;
+          }
+        }
+      }
+    }
+    //
+  }
+}
+//
+
+header {
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    a {
+      z-index: 2;
+      text-decoration: none;
+      font-size: 2rem;
+      padding: 20px;
+      color: $secondary4;
+
+      &:nth-child(1) {
+        font-size: 1.6rem;
+        margin-left: 30px;
+      }
+      &:nth-child(2) {
+        margin: 0;
+        font-size: 1.6rem;
+      }
+    }
+    #indicator {
+      z-index: 1;
+      position: absolute;
+      width: 240px;
+      height: 64px;
+      background: $primary1;
+      margin-top: 1rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      transition: 0.8s ease;
+      display: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        bottom: 0;
+        left: -30px;
+        box-shadow: 10px 5px 0px 0px $primary1;
+        border-bottom-right-radius: 20px;
+      }
+      &::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        bottom: 0;
+        right: 0px;
+        background: transparent;
+        border-bottom-left-radius: 20px;
+        box-shadow: -15px 5px 0px 5px $primary1;
+      }
+    }
+  }
+}

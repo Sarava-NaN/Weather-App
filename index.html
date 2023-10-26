@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!--  -->
+    <script
+      src="https://kit.fontawesome.com/1df6409e58.js"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <!--  -->
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="">Weather App</a>
+        <a href="">Sarwan</a>
+        <div id="indicator"></div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="top_bar">
+        <div class="inputCity">
+          <input type="text" placeholder="Enter City" id="input" />
+        </div>
+        <div class="search_btn">
+          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="error">
+        <p>Error ! ! !</p>
+        <p>Please Enter Correct city</p>
+        <p id="Mistake"></p>
+      </div>
+      <div class="weather-App">
+        <div class="weather_icon">
+          <img src="assets/Images/clouds.png" alt="" id="weatherIcon" />
+        </div>
+        <div class="weather--data">
+          <div class="temp">42 °C</div>
+          <div class="location">Chennai</div>
+          <div class="footer">
+            <div class="humidity">
+              <img src="assets/Images/humidity.png" alt="" />
+              <div class="words">
+                <div class="percentage">52%</div>
+                <div class="text">Humidity</div>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="wind">
+              <img src="assets/Images/wind.png" alt="" />
+              <div class="words">
+                <div class="km">5 km/h</div>
+                <div class="text">wind speed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
