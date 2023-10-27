@@ -306,7 +306,7 @@ header .logo #indicator::after {
     width: 40px;
   }
   .container .weather--data .footer .wind .words {
-    color:#dedee1;
+    color:wheat;
     display: flex;
     flex-direction: column;
     justify-content: center;
