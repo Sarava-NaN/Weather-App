@@ -290,7 +290,7 @@ header .logo #indicator::after {
   }
   .container .weather--data .footer .humidity .words {
     display: flex;
-    color:#dedee1;
+    color:wheat;
     flex-direction: column;
     justify-content: center;
     align-items: center;
