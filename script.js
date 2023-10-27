@@ -72,15 +72,14 @@ async function checkWeather() {
     } else if (data.weather[0].main == "Haze") {
       $Icon.src = "assets/Images/drizzle.png";
     }
+    // "Clouds" "Mist" "Clear" "Smoke" "Haze" "Rain"
     //
-
     Error.style.display = "none";
     weatherApp.style.display = "block";
   }
 }
 // Assign the function to Search Icon
 $Btn.addEventListener("click", checkWeather);
-// "Clouds" "Mist" "Clear" "Smoke" "Haze" "Rain"
 checkWeather();
 
 let time = new Date().getHours();
@@ -90,8 +89,13 @@ let time = new Date().getHours();
 console.log(time);
 
 const Night = document.querySelector(".container");
-if (time > 20) {
-  Night.style.background = "black";
+if (time >= 18 || time <= 6) {
+  Night.style.background =
+    "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('assets/Images/night.jpg')";
+  Night.style.backgroundPosition = "center";
+  Night.style.backgroundSize = "contain";
+  $percentage.style.color = "wheat";
+  $km.style.color = "wheat";
 } else {
   Night.style.background = "linear-gradient(135deg, #00feba, #5b548a)";
 }
